@@ -44,8 +44,8 @@ class ObstacleClass(pygame.sprite.Sprite):
 
 def create_map(start, end):
     obstacles = pygame.sprite.Group()
-    gates = pygame.sprite.Group()
     locations = []
+    gates = pygame.sprite.Group()
     for i in range(10):
         row = random.randint(start, end)
         col = random.randint(0, 9)
@@ -98,7 +98,11 @@ while True:
     map_position += speed[1]
 
     if map_position >= 640 and activeMap == 0:
-        activeMap = 0
+        activeMap = 1
+        map0 = create_map(20,29)
+        obstacles = updateObstacleGroup(map0,map1)
+    if map_position >=1280 and activeMap == 1:
+        activeMap = 0     
         for ob in map0:
             ob.location[1] = ob.location[1] - 1280
         map_position = map_position - 1280
