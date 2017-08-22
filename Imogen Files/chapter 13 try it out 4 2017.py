@@ -1,5 +1,4 @@
-def printmyadress(somename, housenum, somestreet, somecity, somestate, somecountry, postcode):
-    print
+def printmytotal():
     print "1p's : ", one
     print "2p's : ", two
     print "5p's : ", five
@@ -7,7 +6,8 @@ def printmyadress(somename, housenum, somestreet, somecity, somestate, somecount
     print "20p's : ", twenty
     print "50p's : ", fifty
     print "Pounds: ", pound
-    print 
+    print "total is £", total
+    print
 
 one = float(raw_input ("How many 1p's do have? "))
 two = float(raw_input ("How many 2p's do have? "))
@@ -16,6 +16,6 @@ ten = float(raw_input ("How many 10p's do have? "))
 twenty = float(raw_input ("How many 20p's do have? "))
 fifty = float(raw_input ("How many 50p's do have? "))
 pound = float(raw_input ("How many pounds do have? "))
-total = (1 * one) + (2 * two) + (5 * five) + (10 * ten) + (20 * twenty) + (50 * fifty) + (100
+total = (00.01 * one) + (00.02 * two) + (00.05 * five) + (00.10 * ten) + (00.20 * twenty) + (00.50 * fifty) + (1 * pound)
 
-printmyadress(somename, housenum, somestreet, somecity, somestate, somecountry, postcode)
+printmytotal()
