@@ -37,6 +37,7 @@ ballGroup = pygame.sprite.Group(myBall)
 paddle = MyPaddleClass([270, 400])
 lives = 3
 points = 0
+speedrand = random.randint(0, 4)
 
 font = pygame.font.Font(None, 50)
 score_text = font.render(str(points), 1, (0, 0, 0))
@@ -52,7 +53,8 @@ while 1:
             paddle.rect.centerx = event.pos[0]
 
     if pygame.sprite.spritecollide(paddle, ballGroup, False):
-        myBall.speed[1] = -myBall.speed[1]
+        myBall.speed[0] = -myBall.speed[0]
+        myBall.speed[1] = -myBall.speed[speedrand]
     myBall.move()
 
     if not done:
