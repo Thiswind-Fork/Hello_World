@@ -132,7 +132,19 @@ while True:
         screen.blit(inst2_surf, [20, 575])
         pygame.display.flip()
 
-    else:
+    if height > 3500:
+        final1 = "Game over"
+        final2 = "You escaped the moons gravity. No landing today!"
+        pygame.draw.rect(screen, [0, 0, 0], [5, 5, 350, 280],0)
+        f1_font = pygame.font.Font(None, 70)
+        f1_surf = f1_font.render(final1, 1, (255, 255, 255))
+        screen.blit(f1_surf, [20, 50])
+        f2_font = pygame.font.Font(None, 40)
+        f2_surf = f2_font.render(final2, 1, (255, 255, 255))
+        screen.blit(f2_surf, [20, 110])
+        pygame.display.flip()
+
+    elif height == 0.00:
         display_final()
 
     for event in pygame.event.get():

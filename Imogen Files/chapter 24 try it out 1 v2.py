@@ -75,14 +75,19 @@ def display_flames():
 
 def display_final():
     final1 = "Game over"
-    final2 = "You landed at %.1f m/s" % velocity
-    if velocity > -5:
+    if height > 2500 and velocity > 100:
+        final3 = "You have escaped the Moon's gravity."
+        final4 = "No landing today!"
+        final2 = "You are out of orbit."
+    if height < 0.01:
+        final2 = "You landed at %.1f m/s" % velocity
+    if velocity > -5 and velocity < 101:
         final3 = "Nice landing!"
         final4 = "I hear NASA is hiring!"
-    elif velocity > -15:
+    elif velocity > -15 and velocity < 101:
         final3 = "Ouch! A bit rough, but you survived."
         final4 = "You'll do better next time."
-    else:
+    elif velocity < - 15:
         final3 = "Yikes! You crashed a 30 billion dollar ship!"
         final4 = "How are you getting home?"
     pygame.draw.rect(screen, [0, 0, 0], [5, 5, 350, 280],0)
@@ -106,7 +111,7 @@ while True:
     clock.tick(30)
     fps = clock.get_fps()
     if fps < 1:  fps = 30
-    if height > 0.01:
+    if height > 0.01 and height < 2500:
         calculate_velocity()
         screen.fill([0, 0, 0])
         display_stats()
