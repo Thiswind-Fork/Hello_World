@@ -1,0 +1,11 @@
+name = str(raw_input("What is your name?"))
+age = str(raw_input("How old are you??"))
+colour = str(raw_input("What is your favourite colour?"))
+food = str(raw_input("What is your favourite food?"))
+
+new_file = open("answers.txt", 'w')
+new_file.write(name + "\n")
+new_file.write(age + "\n")
+new_file.write(colour + "\n")
+new_file.write(food + "\n")
+new_file.close()
